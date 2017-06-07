@@ -1,0 +1,82 @@
+IN YOUR OWN WORDS!!
+
+1) What is React.js, and what makes it different from other framework/libraries like angular.js?
+ react is a open source JavaScript library for rendering views
+
+
+2) In JSX, we can't use the "class" keyword. Why?
+ well class is already a reserved word  so instead you use className in JSX
+
+3)  Please provide a brief explanation of the virtual DOM.
+like the DOM the virtual DOM is a node tree that list elements and their attributes and content as a objects and properties.
+In react render() methods create the node tree from react components and updates this tree in response to mutations in the data model, caused by actions.
+
+4) What is the difference between props and state?
+ props is a short of "properties" is a way to pass data from parent to child is the comunication panel between components  ,always moving from parent to child component
+
+ state is how a component's data looks and a specific point in time using state we can change how this data looks based oon user input or intereaction
+
+
+5) How do you update a component's state?
+this. setState
+
+6) What happens when state changes?
+the data is update to the new state change information
+
+
+7) What is componentDidMount and how do you use it?
+componentDidMount() is invoked immediately after a component is mounted.
+Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint,
+this is a good place to instantiate the network request.
+ Setting state in this method will trigger a re-rendering.
+
+8) What part of MVC is react most concerned with?
+ the views
+
+9) What are Prop Types and what good are they?
+PropTypes is a way for us to enforce that components receive the right props in the right form,
+it catches errors when you pass the wrong stuff into a component of if the information isRequired
+
+10) Write a basic "Hello 'somename' " component in which you pass the name in as a prop. somename is a variable.
+        function Example(props){
+            return(
+                <div>
+                    <p>Hello<p>
+                    {this.props.somename}
+                </div>
+            );
+
+        }
+
+11) When would you use a class component over a functional component.
+if the component doesn't do much more than take in some props and render.
+ is better use functional component because they will always render
+ and behave the same, given the same props.
+Also, they don't care about lifecycle methods or have their own internal state.
+ but if instead you need yous component to handled state is best to used  class component
+
+12) Why are keys important in React and what are they?
+keys are a unique piece of information
+they help React identify which items have changed, are added, or are removed.
+Keys should be given to the elements inside the array to give the elements a stable identity:
+
+
+13) In which lifecycle method is it a good idea to make Ajax calls?
+ componentDidMount()
+14) How do you tell React to build in production mode?
+first in the webpack fixed some code with you NODE_ENV
+then in the package json make a build
+"build": "NODE_ENV='production' webpack -p"
+
+15) What is wrong with the following code?
+
+this.setState((prevState, props) => {
+ return {
+   streak: prevState.streak + props.count
+ }
+})
+
+ you don't past the props inside of a setState the state is handle in a father component while
+  props are only used in child component.
+
+good luck!!
